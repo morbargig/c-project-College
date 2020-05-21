@@ -37,7 +37,8 @@ void main()
     Class_t* cls;
     // menu();
     // menue();
-    add_Class_to_last(Class_t *cls,id 315999508)
+    id id =1000;
+    add_Class_to_last(Class_t *cls,id id);
 }
 
 void static printMenue()
@@ -59,15 +60,14 @@ void menue()
     {
         printMenue();
         scanf("%d", &res);
-        if (res == -1)
-        {
-            return;
-        }
-        if (res != 0)
+        if ( res > 0 && res < 3)
         {
             (pMenue + res)->pfunch(p);
             res = 0;
+            continue;
         }
+        printf("end menue");
+        break;
     }
 }
 
