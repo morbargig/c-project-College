@@ -21,7 +21,7 @@ void main()
 }
 
 void menu(){
-        person_t *p;
+    person_t *p;
     int action;
     while (1)
     {
