@@ -8,16 +8,65 @@ struct Person
     float age;
 } typedef person_t;
 
+struct menue
+{
+    char *description;
+    void (*pfunch)(person_t *);
+} typedef _menue;
+
 void readFile(person_t **p);
 void printFile(person_t *p);
 void wirteFile(person_t *p);
 int getFileSize();
 void deleteById(person_t *p);
 void menu();
+void menue();
+void static printMenue();
+void exitProgram(person_t *p);
+
+_menue menuArray[] = {
+    {"chose action :", NULL},
+    {"1) wirteFile", wirteFile},
+    {"2) deleteById", deleteById},
+    {"3) printFile", printFile},
+    {"-1) exit", NULL},
+    {NULL, NULL}};
 
 void main()
 {
-    menu();
+    // menu();
+    menue();
+}
+
+void static printMenue()
+{
+    _menue *pMenue = menuArray;
+    while (pMenue->description)
+    {
+        printf("%s\n", pMenue->description);
+        pMenue++;
+    }
+}
+
+void menue()
+{
+    _menue *pMenue = menuArray;
+    person_t *p;
+    int res = 0;
+    while (1)
+    {
+        printMenue();
+        scanf("%d", &res);
+        if (res == -1)
+        {
+            return;
+        }
+        if (res != 0)
+        {
+            (pMenue + res)->pfunch(p);
+            res = 0;
+        }
+    }
 }
 
 void menu()
@@ -43,7 +92,6 @@ void menu()
             printf("end program");
             return;
             break;
-
         default:
             printf("end program");
             return;
