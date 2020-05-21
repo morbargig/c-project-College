@@ -20,7 +20,8 @@ void main()
     menu();
 }
 
-void menu(){
+void menu()
+{
     person_t *p;
     int action;
     while (1)
@@ -94,8 +95,6 @@ void wirteFile(person_t *p)
     person_t newP = {"mor bargig", 315999508, 22.50};
     FILE *f;
     int size = getFileSize();
-    // size=1;
-    // printf("%d", size);
     f = fopen("persons.bin", "wb");
     size += 1;
     fwrite(&size, sizeof(int), 1, f);
@@ -130,4 +129,3 @@ void readFile(person_t **p)
     }
     fclose(f);
 }
-
