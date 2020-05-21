@@ -34,8 +34,10 @@ _menue menuArray[] = {
 
 void main()
 {
+    Class_t* cls;
     // menu();
-    menue();
+    // menue();
+    add_Class_to_last(Class_t *cls,id 315999508)
 }
 
 void static printMenue()
