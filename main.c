@@ -1,18 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "linkedlist.c"
-#define SIZE 20
-
-struct Person
-{
-    char name[SIZE];
-    long id;
-    float age;
-} typedef person_t;
-
-struct menue
-{
-    char *description;
-    void (*pfunch)(person_t *);
-} typedef _menue;
 
 void readFile(person_t **p);
 void printFile(person_t *p);
@@ -34,11 +22,15 @@ _menue menuArray[] = {
 
 void main()
 {
-    Class_t* cls;
-    // menu();
-    // menue();
-    id id =1000;
-    add_Class_to_last(Class_t *cls,id id);
+    Class_t cls = {1,NULL,NULL};
+    // Class_t* p ;
+    // p*=cls;
+    // // menu();
+    // // menue();
+    // _id id = 1000;
+    // Class_t *add_Class_to_last(Class_t p, _id id);
+    fuckU();
+
 }
 
 void static printMenue()
