@@ -28,7 +28,7 @@ void main()
     // // menu();
     // // menue();
     // _id id = 1000;
-    // Class_t *add_Class_to_last(Class_t p, _id id);
+    add_Class_to_last(Class_t cls, _id id);
     fuckU();
 
 }
