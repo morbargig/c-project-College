@@ -41,7 +41,6 @@ struct menue
 } typedef _menue;
 
 
-void fuckU();
 Class_t *add_Class_to_last(Class_t *head, _id id);
 Student_t *add_Student_to_last(Student_t *head, name name, Grade_t *grade);
 Grade_t *add_Grade_to_last(Grade_t *head, _id id, int grade);

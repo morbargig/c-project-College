@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "linkedlist.c"
 
+
 void readFile(person_t **p);
 void printFile(person_t *p);
 void wirteFile(person_t *p);
@@ -20,17 +21,16 @@ _menue menuArray[] = {
     {"-1) exit", NULL},
     {NULL, NULL}};
 
+
+
 void main()
 {
-    Class_t cls = {1,NULL,NULL};
-    // Class_t* p ;
-    // p*=cls;
-    // // menu();
-    // // menue();
+    // Class_t *cls = NULL;
     // _id id = 1000;
-    add_Class_to_last(Class_t cls, _id id);
-    fuckU();
-
+    // cls = add_Class_to_last(cls,id);
+    // id = 20000;
+    // cls = add_Class_to_last(cls,id);
+    menue();
 }
 
 void static printMenue()
@@ -52,7 +52,7 @@ void menue()
     {
         printMenue();
         scanf("%d", &res);
-        if ( res > 0 && res < 3)
+        if ( res > 0 && res <= 3)
         {
             (pMenue + res)->pfunch(p);
             res = 0;

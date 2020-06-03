@@ -2,86 +2,59 @@
 
 Student_t *add_Student_to_last(Student_t *head, name name, Grade_t *grade)
 {
+    Student_t *new = (Student_t *)malloc(sizeof(Student_t));
+    new->name = name;
+    new->grade = grade;
+    new->next = NULL;
+    if (!head)
+    {
+        head->next = new;
+        return head;
+    }
     Student_t *pos = head;
-
-    if (!pos)
+    while (pos->next)
     {
-        pos = (Student_t *)malloc(sizeof(Student_t));
-        pos->name = name;
-        pos->grade = grade;
-        pos->next = NULL;
-        return pos;
+        pos = pos->next;
     }
-    else
-    {
-        while (pos->next)
-        {
-            pos = pos->next;
-        }
-        pos->next = (Student_t *)malloc(sizeof(Student_t));
-        pos->next->name = name;
-        pos->next->grade = grade;
-        pos->next->next = NULL;
-    }
+    head->next = new;
     return head;
-}
-
-void fuckU (){
-    printf("fuck u");
 }
 
 Class_t *add_Class_to_last(Class_t *head, _id id)
 {
+    Class_t *new = (Class_t *)malloc(sizeof(Class_t));
+    new->id = id;
+    new->next = NULL;
+    if (!head)
+    {
+        head->next = new;
+        return head;
+    }
     Class_t *pos = head;
-    printf("bkjdfkdkjf");
-    printf("vfdvdfvd %d",pos->id);
-
-    if (!pos)
+    while (pos->next)
     {
-
-        pos = (Class_t *)malloc(sizeof(Class_t));
-        pos->id = id;
-        printf("vfdvdfvd %d",pos->id);
-        pos->next = NULL;
-        return pos;
+        pos = pos->next;
     }
-    else
-    {
-        while (pos->next)
-        {
-            pos = pos->next;
-            printf(" vfdvdfvv %d",pos->id);
-        }
-        pos->next = (Class_t *)malloc(sizeof(Class_t));
-        pos->next->id = id;
-        pos->next->next = NULL;
-        printf(" fdsdfsdfsdfs %d",pos->id);
-    }
+    pos->next = new;
     return head;
 }
 
 Grade_t *add_Grade_to_last(Grade_t *head, _id id, int grade)
 {
     Grade_t *pos = head;
-
+    Grade_t new = (Grade_t *)malloc(sizeof(Grade_t));
+    new->id = id;
+    new->grade = grade;
+    new->next = NULL;
     if (!pos)
     {
-        pos = (Grade_t *)malloc(sizeof(Grade_t));
-        pos->id = id;
-        pos->grade = grade;
-        pos->next = NULL;
-        return pos;
+        pos->next = new;
+        return head;
     }
-    else
+    while (pos->next)
     {
-        while (pos->next)
-        {
-            pos = pos->next;
-        }
-        pos->next = (Grade_t *)malloc(sizeof(Grade_t));
-        pos->next->id = id;
-        pos->next->grade = grade;
-        pos->next->next = NULL;
+        pos = pos->next;
     }
+    pos->next = new;
     return head;
 }
