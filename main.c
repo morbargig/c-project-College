@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "linkedlist.c"
-
 
 void readFile(person_t **p);
 void printFile(person_t *p);
@@ -12,6 +12,9 @@ void menu();
 void menue();
 void static printMenue();
 void exitProgram(person_t *p);
+Class_t *createClass();
+int classNum(Class_t *head);
+void fillClasswithStudents(Class_t *head);
 
 _menue menuArray[] = {
     {"chose action :", NULL},
@@ -21,16 +24,53 @@ _menue menuArray[] = {
     {"-1) exit", NULL},
     {NULL, NULL}};
 
-
-
 void main()
 {
-    // Class_t *cls = NULL;
-    // _id id = 1000;
-    // cls = add_Class_to_last(cls,id);
-    // id = 20000;
-    // cls = add_Class_to_last(cls,id);
+    // menu();
     menue();
+    // Class_t *cls = createClass();
+    // print_class(cls);
+    // printf("%d\n", classNum(cls));
+    // fillClasswithStudents(cls);
+}
+
+void fillClasswithStudents(Class_t *head)
+{
+    Student_t *stu = head->Students;
+    char name[SIZE];
+    while (1)
+    {
+        printf("what is the student first name\ne to exit\n");
+        scanf("%s", &name);
+        if (strcmp(name, "e") == 0)
+            break;
+        // prev = stu;
+        stu = add_Student_to_last(stu, name, NULL);
+        // printf("%s\n",prev->name);
+    }
+}
+
+int classNum(Class_t *head)
+{
+    int length = 1;
+    while (head = head->next)
+    {
+        length += 1;
+    }
+    return length;
+}
+
+Class_t *createClass()
+{
+    Class_t *cls = NULL;
+    printf("what is the number of classs?");
+    int classsNum;
+    scanf("%d", &classsNum);
+    for (int i = 1; i <= classsNum; i++)
+    {
+        cls = add_Class_to_last(cls, i);
+    }
+    return cls;
 }
 
 void static printMenue()
@@ -52,7 +92,7 @@ void menue()
     {
         printMenue();
         scanf("%d", &res);
-        if ( res > 0 && res <= 3)
+        if (res > 0 && res <= 3)
         {
             (pMenue + res)->pfunch(p);
             res = 0;
